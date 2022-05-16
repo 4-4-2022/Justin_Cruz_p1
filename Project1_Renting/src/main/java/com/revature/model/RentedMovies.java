@@ -20,8 +20,11 @@ public class RentedMovies {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "rented_movie_id_seq")
 	@SequenceGenerator(allocationSize = 1, name = "rented_movie_id_seq")
 	private long id;
+	
 	@Column(name = "name", nullable = false)
 	private String name;
+	
+	
 	public RentedMovies(long id, String name) {
 		super();
 		this.id = id;

@@ -1,16 +1,21 @@
 package com.revature.service;
 
-import java.util.List;
+import java.util.List; 
 
-import javax.jws.WebService;
+import org.springframework.stereotype.Service;
 
 import com.revature.model.Movies;
+import com.revature.repository.MoviesRepository;
 
-@WebService
-public interface MovieAPIService {
+@Service("movieAPIService")
+public class MovieAPIService {
 
-	public List<Movies> findAll();
-	public void buy(Movies movie);
-	public void rent(Movies movie);
-	public void returnMovie(int id);
+	private MoviesRepository moviesRepository;
+	
+	public List<Movies> findAll(){
+		return this.moviesRepository.findAll();
+	}
+//	public void buy(Movies movie);
+//	public void rent(Movies movie);
+//	public void returnMovie(int id);
 }
